@@ -10,6 +10,9 @@
  *
 */
 
+// Create a global var
+$plugin_url = WP_PLUGIN_URL . '/pjrm-plugin-api';
+
 // Add settings page
 function pjrm_articles_menu(){
 
@@ -31,6 +34,7 @@ function pjrm_articles_options_page(){
 	if (!current_user_can('manage_options')){
 		wp_die('No permissions to view this page');
 	}
+	global $plugin_url;
 
 	require('inc/options-page-wrapper.php');
 }

@@ -45,11 +45,34 @@
 						<div class="handlediv" title="Click to toggle"><br></div>
 						<!-- Toggle -->
 
-						<h2 class="hndle">Main</h2>
+						<h2 class="hndle">Articles List</h2>
 
 						<div class="inside">
 
 
+                            <ul class="pjrm-articles">
+
+								<?php for( $i = 0; $i < 10; $i++ ):?>
+                                    <li>
+                                        <ul>
+                                            <li>
+                                                <img width="120px" src="<?php echo $plugin_url . '/images/pg_dummy.jpg' ?>">
+                                            </li>
+
+                                            <li class="pjrm-articles-name">
+                                                <a href="#">
+                                                link
+                                                </a>
+                                            </li>
+
+                                            <li class="pjrm-articles-paragraph">
+                                                <p>Content</p>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+								<?php endfor; ?>
+                            </ul>
 
 
 						</div>
