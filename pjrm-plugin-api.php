@@ -40,5 +40,10 @@ function pjrm_articles_options_page(){
 }
 
 
+function pjrm_articles_backend_styles(){
 
+	wp_enqueue_style('pjrm_articles_backend_css', plugins_url('pjrm-plugin-api/pjrm_articles.css'));
+}
+
+add_action('admin_head', 'pjrm_articles_backend_styles');
 ?>

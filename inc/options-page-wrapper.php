@@ -58,17 +58,14 @@
                                             <li>
                                                 <img width="120px" src="<?php echo $plugin_url . '/images/pg_dummy.jpg' ?>">
                                             </li>
-
                                             <li class="pjrm-articles-name">
                                                 <a href="#">
                                                 link
                                                 </a>
                                             </li>
-
                                             <li class="pjrm-articles-paragraph">
                                                 <p>Content</p>
                                             </li>
-
                                         </ul>
                                     </li>
 								<?php endfor; ?>
