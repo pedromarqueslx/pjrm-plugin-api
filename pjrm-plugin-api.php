@@ -52,6 +52,8 @@ function pjrm_articles_options_page(){
 			$options['pjrm_apikey'] = $pjrm_apikey;
 			$options['last_update'] = time();
 
+			$options['pjrm_results'] = $pjrm_results;
+
 			update_option('pjrm_articles', $options);
 		}
 	}
@@ -68,15 +70,16 @@ function pjrm_articles_options_page(){
 
 function pjrm_articles_get_results($pjrm_apikey){
 
-	$plugin_url = WP_PLUGIN_URL . '/pjrm-plugin-api';
 
-	$json_feed_url = $plugin_url . '/data.json';
+	$json_feed_url = WP_PLUGIN_URL . '/pjrm-plugin-api/data.json';
 
 	$json_feed = wp_remote_get($json_feed_url);
 
-	//echo $json_feed;
-	var_dump($json_feed['body']);
+	$pjrm_results = json_decode($json_feed['body']);
 
+	//var_dump($pjrm_results);
+
+	return $pjrm_results;
 
 }
 
