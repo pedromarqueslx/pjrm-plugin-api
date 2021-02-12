@@ -10,6 +10,7 @@
  *
 */
 
+// Add option page to WP settings
 function pjrm_articles_menu(){
 
     add_options_page(
@@ -22,4 +23,18 @@ function pjrm_articles_menu(){
 }
 
 add_action('admin_menu', 'pjrm_articles_menu');
+
+
+// Create the options page
+function pjrm_articles_options_page(){
+
+	if (!current_user_can('manage_options')){
+		wp_die('No permissions to view this page');
+	}
+
+	echo '<h1>Articles</h1>';
+}
+
+
+
 ?>
