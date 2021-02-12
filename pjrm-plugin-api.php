@@ -32,7 +32,7 @@ function pjrm_articles_options_page(){
 		wp_die('No permissions to view this page');
 	}
 
-	echo '<h1>Articles</h1>';
+	require('inc/options-page-wrapper.php');
 }
 
 
