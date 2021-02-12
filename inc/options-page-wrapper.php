@@ -97,7 +97,43 @@
 
                         <div class="inside">
 
-							<?php var_dump($pjrm_results); ?>
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'logo'}; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'brand_id'}; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'rating'}; ?>
+                            </p>
+
+                            <p>
+                                <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'bonus'}; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'play_url'}; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'terms_and_conditions'}; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'features'}[0]; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'features'}[1]; ?>
+                            </p>
+
+                            <p>
+		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'features'}[2]; ?>
+                            </p>
+
+							<pre><code><?php var_dump($pjrm_results); ?></code></pre>
 
                         </div>
                         <!-- .inside -->
