@@ -10,7 +10,7 @@
  *
 */
 
-// Add option page to WP settings
+// Add settings page
 function pjrm_articles_menu(){
 
     add_options_page(
@@ -25,7 +25,7 @@ function pjrm_articles_menu(){
 add_action('admin_menu', 'pjrm_articles_menu');
 
 
-// Create the options page
+// Create settings page
 function pjrm_articles_options_page(){
 
 	if (!current_user_can('manage_options')){
