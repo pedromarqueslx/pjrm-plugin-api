@@ -10,4 +10,16 @@
  *
 */
 
+function pjrm_articles_menu(){
+
+    add_options_page(
+        'PJRM Plugin Api',
+        'Articles',
+        'manage_options',
+        'pjrm-plugin',
+        'pjrm_articles_options_page'
+    );
+}
+
+add_action('admin_menu', 'pjrm_articles_menu');
 ?>
