@@ -11,6 +11,8 @@
 
 				<div class="meta-box-sortables ui-sortable">
 
+                    <?php if (!isset($pjrm_search) || $pjrm_search == '') : ?>
+
 					<div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
@@ -20,7 +22,10 @@
 
 						<div class="inside">
 							<form method="post" action="">
-							<table class="form-table">
+
+                            <input type="hidden" name="pjrm_form_submitted" value="Y">
+
+                            <table class="form-table">
 								<tr valign="top">
 									<td scope="row"><label for="tablecell">Seach String</label></td>
 									<td><input name="pjrm_search" id="pjrm_search"  type="text" value="" class="regular-text" /></td>
@@ -30,15 +35,19 @@
 									<td><input name="pjrm_apikey" id="pjrm_apikey"  type="text" value="" class="regular-text" /></td>
 								</tr>
 							</table>
+
 							<p>
 								<input class="button-primary" type="submit" name="pjrm_form_submit" value="Save" />
 							</p>
+
 							</form>
 						</div>
 						<!-- .inside -->
 
 					</div>
 					<!-- .postbox -->
+
+                    <?php else: ?>
 
 					<div class="postbox">
 
@@ -48,7 +57,6 @@
 						<h2 class="hndle">Articles List</h2>
 
 						<div class="inside">
-
 
                             <ul class="pjrm-articles">
 
@@ -78,6 +86,8 @@
 					</div>
 					<!-- .postbox -->
 
+                    <?php endif; ?>
+
 				</div>
 				<!-- .meta-box-sortables .ui-sortable -->
 
@@ -89,7 +99,9 @@
 
 				<div class="meta-box-sortables">
 
-					<div class="postbox">
+					<?php if (isset($pjrm_search) && $pjrm_search != ''): ?>
+
+                    <div class="postbox">
 
 						<div class="handlediv" title="Click to toggle"><br></div>
 						<!-- Toggle -->
@@ -98,13 +110,22 @@
 
 						<div class="inside">
 
+                            <form method="post" action="">
+                                <input type="hidden" name="pjrm_form_submitted" value="Y">
+                                <p><input name="pjrm_search" id="pjrm_search"  type="text" value="<?php echo $pjrm_search; ?>" class="all-options" /></p>
+                                <p><input name="pjrm_apikey" id="pjrm_apikey"  type="text" value="<?php echo $pjrm_apikey; ?>" class="all-options" /></p>
+                                <input class="button-primary" type="submit" name="pjrm_form_submit" value="Update" />
+                            </form>
+
 						</div>
 						<!-- .inside -->
 
 					</div>
 					<!-- .postbox -->
 
-				</div>
+					<?php endif; ?>
+
+                </div>
 				<!-- .meta-box-sortables -->
 
 			</div>
