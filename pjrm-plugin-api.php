@@ -46,7 +46,7 @@ function pjrm_articles_options_page(){
 			$pjrm_search = esc_html($_POST['pjrm_search']);
 			$pjrm_apikey = esc_html($_POST['pjrm_apikey']);
 
-			pjrm_articles_get_results($pjrm_search);
+			$pjrm_results = pjrm_articles_get_results($pjrm_search);
 
 			$options['pjrm_search'] = $pjrm_search;
 			$options['pjrm_apikey'] = $pjrm_apikey;
@@ -63,13 +63,13 @@ function pjrm_articles_options_page(){
 	if ($options != ''){
 		$pjrm_search = $options['pjrm_search'];
 		$pjrm_apikey = $options['pjrm_apikey'];
+		$pjrm_results = $options['pjrm_results'];
 	}
 
 	require('inc/options-page-wrapper.php');
 }
 
 function pjrm_articles_get_results($pjrm_apikey){
-
 
 	$json_feed_url = WP_PLUGIN_URL . '/pjrm-plugin-api/data.json';
 

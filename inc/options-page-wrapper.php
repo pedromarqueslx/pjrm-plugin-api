@@ -88,6 +88,23 @@
 
                     <?php endif; ?>
 
+                    <div class="postbox">
+
+                        <div class="handlediv" title="Click to toggle"><br></div>
+                        <!-- Toggle -->
+
+                        <h2>JSON Feed</h2>
+
+                        <div class="inside">
+
+							<?php var_dump($pjrm_results); ?>
+
+                        </div>
+                        <!-- .inside -->
+
+                    </div>
+                    <!-- .postbox -->
+
 				</div>
 				<!-- .meta-box-sortables .ui-sortable -->
 
@@ -103,12 +120,12 @@
 
                     <div class="postbox">
 
-						<div class="handlediv" title="Click to toggle"><br></div>
-						<!-- Toggle -->
+                        <div class="handlediv" title="Click to toggle"><br></div>
+                        <!-- Toggle -->
 
-						<h2>Settings</h2>
+                        <h2>Settings</h2>
 
-						<div class="inside">
+                        <div class="inside">
 
                             <form method="post" action="">
                                 <input type="hidden" name="pjrm_form_submitted" value="Y">
@@ -117,11 +134,11 @@
                                 <input class="button-primary" type="submit" name="pjrm_form_submit" value="Update" />
                             </form>
 
-						</div>
-						<!-- .inside -->
+                        </div>
+                        <!-- .inside -->
 
-					</div>
-					<!-- .postbox -->
+                    </div>
+                    <!-- .postbox -->
 
 					<?php endif; ?>
 
