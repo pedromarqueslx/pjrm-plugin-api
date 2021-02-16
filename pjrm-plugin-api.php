@@ -258,14 +258,11 @@ function pjrm_articles_frontend_styles(){
 	wp_enqueue_script('pjrm_articles_frontend_js', plugins_url('pjrm-plugin-api/pjrm_articles.js'), array('jquery'), '', true);
 	//wp_register_script('prefix_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js');
 	//wp_enqueue_script('prefix_bootstrap');
-	wp_register_style('prefix_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+	wp_register_style('prefix_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 	wp_enqueue_style('prefix_bootstrap');
 }
 
 add_action('wp_enqueue_scripts', 'pjrm_articles_frontend_styles');
-
-
-
 
 
 ?>
