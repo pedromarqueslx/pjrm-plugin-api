@@ -25,12 +25,12 @@
                             <input type="hidden" name="pjrm_form_submitted" value="Y">
 
                             <table class="form-table">
-								<tr valign="top">
-									<td scope="row"><label for="tablecell">Seach</label></td>
+								<tr>
+									<td><label for="pjrm_search">Seach</label></td>
 									<td><input name="pjrm_search" id="pjrm_search" type="text" value="" class="regular-text" /></td>
 								</tr>
-								<tr valign="top">
-									<td scope="row"><label for="tablecell">API Key</label></td>
+								<tr>
+									<td><label for="pjrm_apikey">API Key</label></td>
 									<td><input name="pjrm_apikey" id="pjrm_apikey" type="text" value="" class="regular-text" /></td>
 								</tr>
 							</table>
