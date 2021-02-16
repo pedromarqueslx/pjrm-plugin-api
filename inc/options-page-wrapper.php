@@ -15,10 +15,9 @@
 
 					<div class="postbox">
 
-						<div class="handlediv" title="Click to toggle"><br></div>
 						<!-- Toggle -->
 
-						<h2 class="hndle">Main</h2>
+                        <h2 class="hndle">To load JSON Feed data, please insert some search text and the API key.</h2>
 
 						<div class="inside">
 							<form method="post" action="">
@@ -27,12 +26,12 @@
 
                             <table class="form-table">
 								<tr valign="top">
-									<td scope="row"><label for="tablecell">Seach String</label></td>
-									<td><input name="pjrm_search" id="pjrm_search"  type="text" value="" class="regular-text" /></td>
+									<td scope="row"><label for="tablecell">Seach</label></td>
+									<td><input name="pjrm_search" id="pjrm_search" type="text" value="" class="regular-text" /></td>
 								</tr>
 								<tr valign="top">
 									<td scope="row"><label for="tablecell">API Key</label></td>
-									<td><input name="pjrm_apikey" id="pjrm_apikey"  type="text" value="" class="regular-text" /></td>
+									<td><input name="pjrm_apikey" id="pjrm_apikey" type="text" value="" class="regular-text" /></td>
 								</tr>
 							</table>
 
@@ -45,8 +44,7 @@
 						<!-- .inside -->
 
 					</div>
-					<!-- .postbox -->
-
+                    <!-- .postbox -->
                     <?php else: ?>
 
 					<div class="postbox">
@@ -56,35 +54,70 @@
 
 						<h2 class="hndle">Articles List</h2>
 
-						<div class="inside">
+						    <div class="inside">
 
-                            <ul class="pjrm-articles">
+                                <ul class="pjrm-articles">
+                                    <!-- PHP loop -->
+								    <?php for( $i = 0; $i < 4; $i++ ):?>
 
-								<?php for( $i = 0; $i < 10; $i++ ):?>
-                                    <li>
-                                        <ul>
-                                            <li>
-                                                <img width="120px" src="<?php echo $plugin_url . '/images/pg_dummy.jpg' ?>">
-                                            </li>
-                                            <li class="pjrm-articles-name">
-                                                <a href="#">
-                                                link
-                                                </a>
-                                            </li>
-                                            <li class="pjrm-articles-paragraph">
-                                                <p>Content</p>
-                                            </li>
-                                        </ul>
-                                    </li>
-								<?php endfor; ?>
-                            </ul>
+                                        <li>
+                                            <ul>
 
+                                                <!-- Create condition to check if image exist in the array -->
+                                                <?php if ( ! empty( $pjrm_results ) ) {
+	                                                if( !empty($pjrm_results->{'toplists'}->{'575'}[$i]->{'logo'})): ?>
 
-						</div>
-						<!-- .inside -->
+                                                    <li>
+                                                        <img src="<?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'logo'}; ?>" width="120px" alt="Casino">
+                                                    </li>
 
-					</div>
-					<!-- .postbox -->
+                                                    <?php endif;
+                                                } ?>
+
+                                                <li>
+                                                    <a href="https://www.site_url.com/<?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'brand_id'}; ?>" target="_blank">Review</a>
+                                                </li>
+
+                                                <li>
+		                                            <?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'info'}->{'rating'}; ?>
+                                                </li>
+
+                                                <li>
+		                                            <?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'info'}->{'bonus'}; ?>
+                                                </li>
+
+                                                <li>
+                                                    <a href="<?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'play_url'}; ?>" target="_blank">PLAY</a>
+                                                </li>
+
+                                                <li>
+		                                            <?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'terms_and_conditions'}; ?>
+                                                </li>
+
+                                                <li>
+		                                            <?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'info'}->{'features'}[0]; ?>
+                                                </li>
+
+                                                <li>
+		                                            <?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'info'}->{'features'}[1]; ?>
+                                                </li>
+
+                                                <li>
+		                                            <?php echo $pjrm_results->{'toplists'}->{'575'}[$i]->{'info'}->{'features'}[2]; ?>
+                                                </li>
+
+                                            </ul>
+
+                                        </li>
+
+								    <?php endfor; ?>
+
+                                </ul>
+
+                            </div>
+
+					    </div>
+					    <!-- .postbox -->
 
                     <?php endif; ?>
 
@@ -93,45 +126,9 @@
                         <div class="handlediv" title="Click to toggle"><br></div>
                         <!-- Toggle -->
 
-                        <h2>JSON Feed</h2>
+                        <h2>JSON Feed - For Development Proposes</h2>
 
                         <div class="inside">
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'logo'}; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'brand_id'}; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'rating'}; ?>
-                            </p>
-
-                            <p>
-                                <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'bonus'}; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'play_url'}; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'terms_and_conditions'}; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'features'}[0]; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'features'}[1]; ?>
-                            </p>
-
-                            <p>
-		                        <?php echo $pjrm_results->{'toplists'}->{'575'}[0]->{'info'}->{'features'}[2]; ?>
-                            </p>
 
 							<pre><code><?php var_dump($pjrm_results); ?></code></pre>
 
@@ -165,8 +162,14 @@
 
                             <form method="post" action="">
                                 <input type="hidden" name="pjrm_form_submitted" value="Y">
-                                <p><input name="pjrm_search" id="pjrm_search"  type="text" value="<?php echo $pjrm_search; ?>" class="all-options" /></p>
-                                <p><input name="pjrm_apikey" id="pjrm_apikey"  type="text" value="<?php echo $pjrm_apikey; ?>" class="all-options" /></p>
+                                <p>
+                                    <label for="tablecell">Seach</label>
+                                    <input name="pjrm_search" id="pjrm_search"  type="text" value="<?php echo $pjrm_search; ?>" class="all-options" />
+                                </p>
+                                <p>
+                                    <label for="tablecell">API Key</label>
+                                    <input name="pjrm_apikey" id="pjrm_apikey" type="text" value="<?php echo $pjrm_apikey; ?>" class="all-options" />
+                                </p>
                                 <input class="button-primary" type="submit" name="pjrm_form_submit" value="Update" />
                             </form>
 
