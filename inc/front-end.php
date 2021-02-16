@@ -8,7 +8,7 @@
     echo $before_title . $title . $after_title ;
 ?>
 
-<ul class="pgnyt-articles frontend">
+<ul class="pjrm-articles frontend">
 
 	<?php
 
